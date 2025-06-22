@@ -2,12 +2,11 @@ import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
+import {greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import profileImage from "../../assets/images/jeffOfficialImage.png";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -31,7 +30,7 @@ export default function Greeting() {
                 className={
                   isDark
                     ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
+                    : "greeting-text-p subTitle-hero"
                 }
               >
                 {greeting.subTitle}
@@ -42,25 +41,23 @@ export default function Greeting() {
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href={require("./resume.pdf")}
-                    download="Resume.pdf"
+                    href={greeting.resumeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="download-link-button"
                   >
-                    <Button text="Download my resume" />
+                    <Button text="Download my CV" />
                   </a>
                 )}
               </div>
             </div>
           </div>
           <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
-            )}
+            <img
+              src={profileImage}
+              alt="Jeff Ng'ang'a"
+              className="hero-image"
+            />
           </div>
         </div>
       </div>

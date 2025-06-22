@@ -29,7 +29,8 @@ export default function Talks() {
               <TalkCard
                 key={i}
                 talkDetails={{
-                  title: talk.title,
+                  image: talk.image,
+                  imageAlt: talk.imageAlt,
                   subtitle: talk.subtitle,
                   slides_url: talk.slides_url,
                   event_url: talk.event_url,

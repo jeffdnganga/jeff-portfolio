@@ -13,11 +13,7 @@
   margin-top: 2rem;
 }
 
-.greeting-main {
-  display: flex;
-}
-
-.subTitle {
+.subTitle-hero {
   color: $subTitle !important;
 }
 
@@ -54,8 +50,11 @@
 }
 
 .greeting-image-div > img {
-  max-width: 100%;
-  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .wave-emoji {
@@ -64,6 +63,24 @@
   animation-name: wave;
   display: inline-block;
   transform-origin: 70% 70%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 500px;
+  border-radius: 0 0 70px 0;
+  display: block;
+  margin: 0 auto;
+}
+
+// Container for background on small screens
+.greeting-main {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
 }
 
 @keyframes wave {
@@ -106,17 +123,50 @@
   .greeting-text {
     font-size: 30px;
     text-align: center;
+    background-color: transparent !important;
   }
   .greeting-text-p {
     font-size: 16px;
     line-height: normal;
     text-align: center;
+    background-color: transparent !important;
+  }
+  .greet-main{
+    background-image: url("../../assets/images/jeffOfficialImage.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: transparent !important; // ← Forcefully prevent dark-mode background
+  }
+  .greet-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); // ← This makes image dark enough under text
+    z-index: -1;
+  }
+  .greeting-text-hero,
+  .greeting-text,
+  .subTitle-hero,
+  .button-greeting-div button,
+  .download-link-button button {
+    color: #ffffff !important;
   }
   .greeting-main {
     display: block;
   }
   .greeting-image-div {
-    height: 256px;
+    display: none; // Hide the image tag on small screens
+  }
+  .greeting-text-div {
+    text-align: center;
+  }
+  .greeting-image-div {
+    display: none;
   }
 }
 
