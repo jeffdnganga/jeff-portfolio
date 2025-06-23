@@ -121,7 +121,7 @@ const educationInfo = {
       logo: require("./assets/images/kenyattaUniversityLogo.png"),
       subHeader: "Bachelor of Science in Computer Science",
       duration: "August 2017 - December 2021",
-      desc: "Speicalized in Software Development, Data Structures, Algorithms, Databases, and Web Technologies",
+      desc: "Specialized in Software Development, Data Structures, Algorithms, Databases, and Web Technologies",
     }
   ]
 };
